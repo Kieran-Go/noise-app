@@ -1,0 +1,53 @@
+html{
+    background-color: rgb(28, 28, 162);
+    /* background-image: url(../img/rain.gif); */
+}
+
+h1, .soundMasterContainer, .soundContainer{
+    display: flex;
+    justify-self: center;
+}
+
+h1{
+    color: white;
+}
+
+img{
+    width: 80px;
+    height: auto;
+}
+
+.volumeSlider{
+    margin: 15px;
+    width: 200px;
+}
+
+p{
+    margin-top: -10px;
+}
+
+.soundMasterContainer{
+    width: 1200px;
+    border: solid;
+    border-color: rgb(246, 240, 240, 0.75);
+    border-radius: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgba(164, 111, 13, 0.9);
+}
+
+.soundContainer{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    height: auto;
+    padding: 15px;
+    margin: 20px;
+    border-color: rgb(246, 240, 240, 0.75);
+    border-radius: 20px;
+    color: white;
+    background-color: rgba(66, 4, 85, 0.9);
+}
+
