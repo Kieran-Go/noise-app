@@ -1,6 +1,7 @@
 html{
     background-color: rgb(28, 28, 162);
-    /* background-image: url(../img/rain.gif); */
+    display: flex;
+    justify-content: center;
 }
 
 h1, .soundMasterContainer, .soundContainer{
