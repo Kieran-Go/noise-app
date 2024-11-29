@@ -1,29 +1,10 @@
-// Initialize all audio
-const sounds = document.querySelectorAll("audio");
-for(const sound of sounds){
-    // Initialize the sound of all audio at 0
-    sound.volume = 1;
-}
-
-// Initialize the vgm audio as it has additional requirements
-const vgm = document.querySelector("#vgm");
-// Change vgm song on ended
-vgm.onended = function(){
-    prepareSong();
-    vgm.play();
-}
-
-const VGM_SONGS = [
-    "FF7 Remake_Midnight Rendezvous.mp3",
-    "Gran Turismo 5_Sunset Haze.mp3"
-];
-let vgmIndex = -1;
-
+// Plays the song on the current index
 function prepareSong(){
     vgmIndex = (vgmIndex + 1) % VGM_SONGS.length; // Loop back to the start
     vgm.setAttribute("src", "audio/vgm/" + VGM_SONGS[vgmIndex]);
 }
 
+// Randomly shuffles the order of an array of music
 function shuffleMusic(music) {
     for (let i = music.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -31,12 +12,31 @@ function shuffleMusic(music) {
     }
 }
 
+// Initialize all audio
+const sounds = document.querySelectorAll("audio");
+
+// Initialize the vgm audio seperately as it has additional requirements
+const vgm = document.querySelector("#vgm");
+// Change vgm song on ended
+vgm.onended = function(){
+    prepareSong();
+    vgm.play();
+}
+
+// VGM songs array
+const VGM_SONGS = [
+    "FF7 Remake_Midnight Rendezvous.mp3",
+    "Gran Turismo 5_Sunset Haze.mp3"
+];
+let vgmIndex = -1;
+
 shuffleMusic(VGM_SONGS);
 prepareSong();
 
+// Initialize the volume sliders
 const volumeSliders = document.querySelectorAll(".volumeSlider");
 for(const slider of volumeSliders){
-    // Initialize the volume slider values at 0
+    // Volume slider values start at 0
     slider.value = 0;
 
     // Event listener for changing audio value
