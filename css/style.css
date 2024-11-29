@@ -1,12 +1,17 @@
 html{
-    background-color: rgb(28, 28, 162);
+    background-color: rgb(28, 28, 162) !important;
     display: flex;
     justify-content: center;
+}
+
+body{
+    background-color: rgb(28, 28, 162) !important;
 }
 
 h1, .soundMasterContainer, .soundContainer{
     display: flex;
     justify-self: center;
+    justify-content: center;
 }
 
 h1{

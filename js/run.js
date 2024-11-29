@@ -6,3 +6,7 @@ shuffle(SONG_DATA);
 
 // Prepare the first song for playing
 prepareSong(SONG_DATA);
+
+// Overwrite custom themes for browsers that change the background color
+const page = document.querySelector("html");
+page.setAttribute("style", "background-color: rgb(28, 28, 162) !important;");
