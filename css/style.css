@@ -1,11 +1,17 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+
 html{
-    background-color: rgb(28, 28, 162) !important;
+    /* background-image: url("../img/rain.gif"), linear-gradient(to right, rgb(7, 55, 127) , rgb(117, 118, 134)); */
+    background-image: linear-gradient(to right, rgb(4, 39, 92) , rgb(93, 94, 107));
+    background-size: cover;
     display: flex;
     justify-content: center;
 }
 
 body{
-    background-color: rgb(28, 28, 162) !important;
+    /* background-color: rgb(28, 28, 162) !important; */
 }
 
 h1, .soundMasterContainer, .soundContainer{
@@ -14,8 +20,22 @@ h1, .soundMasterContainer, .soundContainer{
     justify-content: center;
 }
 
-h1{
+.headerSmall{
     color: white;
+    font-size: 22px;
+    margin-bottom: -50px;
+    margin-right: 350px;
+    font-family: "Pinyon Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.headerLarge{
+    color: rgb(231, 153, 9);
+    font-family: "Zen Tokyo Zoo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    margin-bottom: 10px;
 }
 
 img{
@@ -36,11 +56,11 @@ p{
     width: 1200px;
     border: solid;
     border-color: rgb(246, 240, 240, 0.75);
-    border-radius: 20px;
+    border-radius: 75px;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: rgba(164, 111, 13, 1);
+    background-color: rgb(0, 0, 0, 0.5);
 }
 
 .soundContainer{
@@ -54,7 +74,8 @@ p{
     border-color: rgb(246, 240, 240, 0.75);
     border-radius: 20px;
     color: white;
-    background-color: rgba(66, 4, 85, 0.9);
+    background-color: rgba(30, 79, 164, 0.5);
+    border-style: solid;
 }
 
 .vgmBtnContainer{
