@@ -40,15 +40,15 @@ p{
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: rgba(164, 111, 13, 0.9);
+    background-color: rgba(164, 111, 13, 1);
 }
 
 .soundContainer{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: fit-content;
-    height: auto;
+    width: 250px;
+    height: 171.6px;
     padding: 15px;
     margin: 20px;
     border-color: rgb(246, 240, 240, 0.75);
@@ -57,3 +57,50 @@ p{
     background-color: rgba(66, 4, 85, 0.9);
 }
 
+.vgmBtnContainer{
+    margin-top: -5px;
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.prevBtn, .nextBtn{
+    width: 22px;
+    height: auto;
+}
+.prevBtn{
+    rotate: 180deg;
+}
+
+.songNameContainer{
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: black;
+    width: 200px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.songNameWrapper {
+    white-space: nowrap;
+    animation: scrollLeft linear infinite; /* Animation for scrolling */
+}
+
+.songName {
+    display: inline;
+    padding-left: 100%; /* Make text start off-screen */
+    color: aqua;
+}
+
+/* Keyframes for scrollLeft effect */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0%); /* Text starts off-screen */
+    }
+    100% {
+        transform: translateX(-211%); /* Text moves all the way to the left completely out of view */
+    }
+}

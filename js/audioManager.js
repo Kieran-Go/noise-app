@@ -1,5 +1,8 @@
 // Initialize all audio elements
 const sounds = document.querySelectorAll("audio");
+for(const sound of sounds){
+    sound.volume = 0; // Initialize the volume of all audio to 0
+}
 
 // Initialize the volume slider elements
 const volumeSliders = document.querySelectorAll(".volumeSlider");
@@ -23,7 +26,6 @@ for(const slider of volumeSliders){
 
 // Initialize the vgm audio seperately as it has additional requirements
 const vgm = document.querySelector("#vgm");
-// Change vgm song on ended
 vgm.onended = function(){
     prepareSong(SONG_DATA);
     vgm.play();
