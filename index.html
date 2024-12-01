@@ -7,22 +7,32 @@
     <title>Kieran's Sounds</title>
 </head>
 <body>
+    <!-- Audio for players -->
+    <audio id="rain" src="audio/rain.mp3" loop></audio>
+    <audio id="vgm" src=""></audio>
+    <audio id="waves" src="audio/waves.mp3" loop></audio>
+    <audio id="bird" src="audio/bird.mp3" loop></audio>
+
+    <!-- Dark mode elements -->
     <div class="darkModeBtnContainer">
         <img class="darkModeBtn" src="img/sunBtn.png">
     </div>
     <audio id="light" src="audio/util/lightOff.mp3"></audio>
     <div id="overlay" class="hidden"></div>
 
-    <audio id="rain" src="audio/rain.mp3" loop></audio>
-    <audio id="vgm" src=""></audio>
-    <audio id="waves" src="audio/waves.mp3" loop></audio>
-    <audio id="bird" src="audio/bird.mp3" loop></audio>
-
+    <!-- Contains the header -->
     <div class="headerContainer">
         <h1 class="headerSmall">Kieran's</h1>
         <h1 class="headerLarge">SOUNDS</h1>
     </div>
 
+    <!-- Contains the play button and the delete button -->
+    <div class="playContainer">
+        <img id="playBtn" class="paused" src="img/playBtn_neutral.png">
+        <img class="delBtn" src="img/delBtn_neutral.png">
+    </div>
+
+    <!-- Container for all sound players -->
     <div class="soundMasterContainer">
         <div class="soundContainer">
             <img src="img/rain.png">
@@ -35,13 +45,13 @@
             <input type="range" class="volumeSlider" id="vgmSlider" min="0" max="1" step="0.01">
             <p class="vgmHeader">RELAXING VGM</p>
             <div class="vgmBtnContainer">
-                <img class="prevBtn" src="img/playBtn_neutral.png">
+                <img class="prevBtn" src="img/nextBtn_neutral.png">
                 <div class="songNameContainer">
                     <div class="songNameWrapper">
                         <p class="songName"></p>
                     </div>
                 </div>
-                <img class="nextBtn" src="img/playBtn_neutral.png">
+                <img class="nextBtn" src="img/nextBtn_neutral.png">
             </div>
         </div>
 

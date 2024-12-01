@@ -2,39 +2,19 @@
 const nextBtn = document.querySelector(".nextBtn");
 nextBtn.addEventListener("click", () =>{
     prepareSong(SONG_DATA);
-    if(vgm.volume > 0) vgm.play();
+    if(playBtn.className !== "paused") vgm.play();
 });
+setupButtonStates(nextBtn, "img/nextBtn");
 
 // Initialize the 'prev' button
 const prevBtn = document.querySelector(".prevBtn");
 prevBtn.addEventListener("click", () =>{
     prepareSong(SONG_DATA, true);
-    if(vgm.volume > 0) vgm.play();
+    if(playBtn.className !== "paused") vgm.play();
 });
+setupButtonStates(prevBtn, "img/nextBtn");
 
-// Button states
-const buttons = [nextBtn, prevBtn];
-
-buttons.forEach(button => {
-    button.addEventListener("mouseover", () => {
-        button.setAttribute("src", "img/playBtn_hover.png");
-    });
-
-    button.addEventListener("mouseout", () => {
-        button.style.backgroundColor = "";
-        button.setAttribute("src", "img/playBtn_neutral.png");
-    });
-
-    button.addEventListener("mousedown", () => {
-        button.setAttribute("src", "img/playBtn_pressed.png");
-    });
-
-    button.addEventListener("mouseup", () => {
-        button.setAttribute("src", "img/playBtn_hover.png");
-    });
-});
-
-// Dark mode toggle button
+// Initialize the Dark mode toggle button
 const darkModeBtn = document.querySelector(".darkModeBtn");
 darkModeBtn.addEventListener("click", () =>{
     // Toggle dark mode
@@ -56,3 +36,41 @@ darkModeBtn.addEventListener("click", () =>{
     if(sound.volume < 1) sound.volume = 1;
     sound.play();
 })
+
+// Initialize the delete button
+const delBtn = document.querySelector(".delBtn");
+delBtn.addEventListener("click", () => {
+    for(const slider of volumeSliders){
+        slider.value = 0;
+        // Store the slider value into local storage
+        localStorage.setItem(slider.id, slider.value);
+    }
+    for(const sound of sounds){
+        if(sound.id != "light"){ // Exclude the light sfx
+            sound.volume = 0;
+            sound.pause();
+            // Store the sound volume into local storage
+            localStorage.setItem(sound.id, sound.volume);
+        }
+    }
+})
+setupButtonStates(delBtn, "img/delBtn");
+
+// Sets up a button with basic state management, changing its src to reflect the user's interaction with it
+function setupButtonStates(button, btnSrc){
+    button.addEventListener("mouseover", () => {
+        button.setAttribute("src", btnSrc + "_hover.png");
+    });
+
+    button.addEventListener("mouseout", () => {
+        button.setAttribute("src", btnSrc + "_neutral.png");
+    });
+
+    button.addEventListener("mousedown", () => {
+        button.setAttribute("src", btnSrc + "_pressed.png");
+    });
+
+    button.addEventListener("mouseup", () => {
+        button.setAttribute("src", btnSrc + "_hover.png");
+    });
+}
