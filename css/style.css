@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 html{
-    /* background-image: url("../img/rain.gif"), linear-gradient(to right, rgb(7, 55, 127) , rgb(117, 118, 134)); */
+
     background-image: linear-gradient(to right, rgb(4, 39, 92) , rgb(93, 94, 107));
     background-size: cover;
     display: flex;
@@ -17,15 +17,22 @@ body.noScroll{
 
 h1, .soundMasterContainer, .soundContainer{
     display: flex;
+    flex-wrap: wrap;
     justify-self: center;
     justify-content: center;
+}
+
+.headerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -20px;
 }
 
 .headerSmall{
     color: white;
     font-size: 22px;
-    margin-bottom: -50px;
-    margin-right: 350px;
+    margin-bottom: -40px;
     font-family: "Pinyon Script", cursive;
     font-weight: 400;
     font-style: normal;
@@ -40,13 +47,13 @@ h1, .soundMasterContainer, .soundContainer{
 }
 
 img{
-    width: 80px;
+    width: 30%;
     height: auto;
 }
 
 .volumeSlider{
     margin: 15px;
-    width: 200px;
+    width: 75%;
 }
 
 p{
@@ -57,7 +64,7 @@ p{
 }
 
 .soundMasterContainer{
-    width: 1200px;
+    width: 80%;
     border: solid;
     border-color: rgb(246, 240, 240, 0.75);
     border-radius: 75px;
@@ -65,14 +72,16 @@ p{
     flex-wrap: wrap;
     justify-content: space-around;
     background-color: rgb(0, 0, 0, 0.5);
+    margin: auto;
     margin-bottom: 70px;
+    padding: 1%;;
 }
 
 .soundContainer{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 250px;
+    width: 20%;
     height: 171.6px;
     padding: 15px;
     margin: 20px;
@@ -86,12 +95,12 @@ p{
 .vgmBtnContainer{
     margin-top: -5px;
     display: flex;
-    justify-content: space-between;
-    width: 250px;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .prevBtn, .nextBtn{
-    width: 22px;
+    width: 9%;
     height: auto;
 }
 .prevBtn{
@@ -103,8 +112,6 @@ p{
     justify-content: center;
     border-radius: 20px;
     background-color: black;
-    width: 200px;
-    height: auto;
     position: relative;
     overflow: hidden;
 }
@@ -148,15 +155,14 @@ p{
 
 .topContainer{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 10px;
-    margin-bottom: -50px;
-    margin-right: -150px;
-    margin-left: -140px;
 }
 
 .masterVolumeContainer{
     display: flex;
+    flex-wrap: wrap;
 }
 #masterVolume{
     width: 200px;
@@ -187,7 +193,7 @@ p{
     margin: 20px;
 }
 #playBtn{
-    width: 150px;
+    width: 10%;
     height: auto;
     margin-right: 400px;
     margin-left: 430px;
@@ -196,4 +202,32 @@ p{
     width: 30px;
     height: 30px;
     margin-top: 70px;
+}
+
+/* Adjust media to account for smaller screens */
+@media (max-width: 768px) {
+
+    .headerContainer{
+        margin-top: 50px;
+    }
+
+    .soundContainer {
+        width: 40%;
+        margin: 10px;
+    }
+
+    .headerLarge {
+        font-size: 40px;
+    }
+
+    #playBtn {
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+        height: auto;
+    }
+
+    .songNameContainer {
+        width: 70%; 
+    }
 }
