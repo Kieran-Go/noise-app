@@ -155,7 +155,6 @@ p{
 
 .topContainer{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 10px;
 }
@@ -191,6 +190,7 @@ p{
     display: flex;
     justify-content: center;
     margin: 20px;
+    margin-top: -10px;
 }
 #playBtn{
     width: 10%;
