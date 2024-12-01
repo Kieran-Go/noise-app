@@ -8,13 +8,17 @@
 </head>
 <body>
     <!-- Audio for players -->
-    <audio id="rain" src="audio/rain.mp3" loop></audio>
-    <audio id="vgm" src=""></audio>
-    <audio id="waves" src="audio/waves.mp3" loop></audio>
-    <audio id="bird" src="audio/bird.mp3" loop></audio>
+    <audio id="rain" class="audio" src="audio/rain.mp3" loop></audio>
+    <audio id="vgm" class="audio" src=""></audio>
+    <audio id="waves" class="audio" src="audio/waves.mp3" loop></audio>
+    <audio id="bird" class="audio" src="audio/bird.mp3" loop></audio>
 
-    <!-- Dark mode elements -->
-    <div class="darkModeBtnContainer">
+    <!-- Top of screen elements container -->
+    <div class="topContainer">
+        <div class="masterVolumeContainer">
+            <input type="range" id="masterVolume" min="0" max="1" step="0.01" value="1">
+            <button id="muteBtn">MUTE</button>
+        </div>
         <img class="darkModeBtn" src="img/sunBtn.png">
     </div>
     <audio id="light" src="audio/util/lightOff.mp3"></audio>

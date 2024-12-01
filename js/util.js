@@ -74,3 +74,22 @@ function setupButtonStates(button, btnSrc){
         button.setAttribute("src", btnSrc + "_hover.png");
     });
 }
+
+// Initialize the mute button
+const muteBtn = document.getElementById("muteBtn");
+muteBtn.addEventListener("click", () => {
+    const isMuted = muteBtn.classList.toggle("muted");
+    if (isMuted) {
+        // Store the current master volume before muting
+        previousMasterVolume = masterVolume.value;
+        masterVolume.value = 0; // Set master volume to 0
+        muteBtn.textContent = "UNMUTE";
+    } else {
+        // Restore the previous master volume
+        masterVolume.value = previousMasterVolume || 1; // Defaults to 1 if undefined
+        muteBtn.textContent = "MUTE";
+    }
+
+    // Trigger master volume input event to update audio
+    masterVolume.dispatchEvent(new Event("input"));
+});

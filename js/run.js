@@ -7,7 +7,7 @@ shuffle(SONG_DATA);
 // Prepare the first song for playing
 prepareSong(SONG_DATA);
 
-// Load saved volume from localStorage if it exists
+// Restore saved volume data from localStorage if it exists
 for(const slider of volumeSliders){
     const savedValue = localStorage.getItem(slider.id);
     if(savedValue !== null){
@@ -20,4 +20,8 @@ for(const sound of sounds){
     if(savedSound !== null){
         sound.volume = savedSound;
     }
+}
+const savedMaster = localStorage.getItem(masterVolume);
+if(savedMaster != null){
+    masterVolume.value = savedMaster;
 }
