@@ -33,3 +33,26 @@ buttons.forEach(button => {
         button.setAttribute("src", "img/playBtn_hover.png");
     });
 });
+
+// Dark mode toggle button
+const darkModeBtn = document.querySelector(".darkModeBtn");
+darkModeBtn.addEventListener("click", () =>{
+    // Toggle dark mode
+    const overlay = document.getElementById("overlay");
+    const body = document.body;
+    overlay.classList.toggle("visible");
+    body.classList.toggle('noScroll');
+
+    // Change the toggle button source
+    const sunSrc = "img/sunBtn.png";
+    const moonSrc = "img/moonBtn.png";
+    overlay.className === "hidden" ? darkModeBtn.setAttribute("src", sunSrc) : darkModeBtn.setAttribute("src", moonSrc);
+
+    // Play the sound effect
+    const sound = document.getElementById("light");
+    const lightOn = "audio/util/lightOn.mp3";
+    const lightOff = "audio/util/lightOff.mp3";
+    overlay.className === "hidden" ? sound.setAttribute("src", lightOn) : sound.setAttribute("src", lightOff);
+    if(sound.volume < 1) sound.volume = 1;
+    sound.play();
+})
